@@ -1,24 +1,24 @@
-# template-react-hook
+# use-did-update
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/brunoscopelliti/template-react-hook/blob/main/LICENSE)
-[![npm version](https://img.shields.io/npm/v/@bscop/template-react-hook.svg?style=flat)](https://www.npmjs.com/package/@bscop/template-react-hook)
-[![CircleCI Status](https://circleci.com/gh/brunoscopelliti/template-react-hook.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/brunoscopelliti/template-react-hook)
-[![Coverage](https://img.shields.io/codecov/c/github/brunoscopelliti/template-react-hook)](https://app.codecov.io/gh/brunoscopelliti/template-react-hook/)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/brunoscopelliti/use-did-update/blob/main/LICENSE)
+[![npm version](https://img.shields.io/npm/v/@bscop/use-did-update.svg?style=flat)](https://www.npmjs.com/package/@bscop/use-did-update)
+[![CircleCI Status](https://circleci.com/gh/brunoscopelliti/use-did-update.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/brunoscopelliti/use-did-update)
+[![Coverage](https://img.shields.io/codecov/c/github/brunoscopelliti/use-did-update)](https://app.codecov.io/gh/brunoscopelliti/use-did-update/)
 
-A template to create a new React custom hook.
+React hook to handle componentDidUpdate lifecycle event.
 
 ## Install
 
 ```
-npm i @bscop/template-react-hook
+npm i @bscop/use-did-update
 ```
 
 ## Usage
 
 ```js
-import useHook from "@bscop/template-react-hook";
+import useDidUpdate from "@bscop/use-did-update";
 
-useHook();
+useDidUpdate();
 ```
 
 ## Contribute
