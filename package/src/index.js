@@ -1,12 +1,37 @@
-import { useState, useCallback } from "react";
+import { useEffect, useRef } from "react";
 
-const useCounter =
-  () => {
-    const [count, setCount] = useState(0);
+/**
+ * React hook to handle componentDidUpdate lifecycle event.
+ * @name useDidUpdate
+ * @param {import("./index").Handler} onDidUpdate
+ * @param {import("./index").Handler} [onDidUpdateCleanup]
+ * @param {any[]} [params]
+ */
+const useDidUpdate =
+  (onDidUpdate, onDidUpdateCleanup, params) => {
+    if (Array.isArray(onDidUpdateCleanup)) {
+      params = onDidUpdateCleanup;
+      onDidUpdateCleanup = undefined;
+    }
 
-    const increment = useCallback(() => setCount((x) => x + 1), []);
+    const ref = useRef(false);
 
-    return { count, increment };
+    useEffect(
+      () => {
+        if (ref.current) {
+          onDidUpdate();
+
+          if (typeof onDidUpdateCleanup == "function") {
+            return () => {
+              onDidUpdateCleanup();
+            };
+          }
+        }
+
+        ref.current = true;
+      },
+      params // eslint-disable-line react-hooks/exhaustive-deps
+    );
   };
 
-export default useCounter;
+export default useDidUpdate;

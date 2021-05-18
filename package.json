@@ -32,7 +32,15 @@
     "LICENSE",
     "README.md"
   ],
-  "keywords": [],
+  "keywords": [
+    "use-update",
+    "use-did-update",
+    "react",
+    "react hook",
+    "react lifecycle",
+    "hook use-update",
+    "hook use-did-update"
+  ],
   "author": "Bruno Scopelliti",
   "license": "MIT",
   "bugs": {

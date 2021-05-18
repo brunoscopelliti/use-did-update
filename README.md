@@ -7,6 +7,9 @@
 
 React hook to handle componentDidUpdate lifecycle event.
 
+The effects run after every completed render - except the initial one - but it's also possible
+to fire them only when certain values have changed.
+
 ## Install
 
 ```
@@ -18,8 +21,25 @@ npm i @bscop/use-did-update
 ```js
 import useDidUpdate from "@bscop/use-did-update";
 
-useDidUpdate();
+useDidUpdate(
+  () => {
+    // Executed after each render, but the first one.
+    console.log("Yay, it's updated");
+  }
+);
 ```
+
+### Api
+
+```
+useDidUpdate(effect, [cleanup], [values]);
+```
+
+- `effect`: the side effect.
+
+- `cleanup`: clean-up logic to execute in case the component is going to be re-rendered.
+
+- `value`: the effect is going to be executed only if also one of these values changed.
 
 ## Contribute
 

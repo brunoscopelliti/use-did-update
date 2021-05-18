@@ -1,8 +1,18 @@
-type HookState = {
-  count : number;
-  increment : () => void;
-};
+export type Handler = () => void;
 
-declare const useCounter : () => HookState;
+export function useDidUpdate(
+  onDidUpdate : Handler,
+) : void;
 
-export default useCounter;
+export function useDidUpdate(
+  onDidUpdate : Handler,
+  onDidUpdateCleanup : Handler,
+  params ?: any[]
+) : void;
+
+export function useDidUpdate(
+  onDidUpdate : Handler,
+  params : any[]
+) : void;
+
+export default useDidUpdate;
